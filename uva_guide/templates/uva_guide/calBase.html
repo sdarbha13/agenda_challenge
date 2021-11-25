@@ -1,0 +1,28 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+{% load bootstrap5 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block head %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <link rel="stylesheet" type="text/css" href="{% static 'uva_guide/css/calendarStyles.css' %}">
+  <title>Django Calendar App</title>
+{% endblock %}
+
+<body>
+
+  {% block content %}
+  {% endblock %}
+
+
+
+  {% block script %}
+  {% endblock %}
+</body>
+</html>

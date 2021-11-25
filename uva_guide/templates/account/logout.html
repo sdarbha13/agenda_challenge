@@ -1,0 +1,26 @@
+{% extends "uva_guide/base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+<h1 style="color: white;">{% trans "Sign Out" %}</h1>
+
+<p style="color: white;">{% trans 'Are you sure you want to sign out?' %}</p>
+
+<form method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button class="btn btn-outline-secondary" type="submit">{% trans 'Sign Out' %}</button>
+</form>
+
+
+{% endblock %}

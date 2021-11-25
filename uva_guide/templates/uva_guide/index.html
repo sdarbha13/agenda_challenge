@@ -1,0 +1,38 @@
+{% extends "uva_guide/base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% load socialaccount %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-center m-3">
+<div class="card">
+     
+        <div class="card-body">
+           
+          <h1 class="card-title p-3">Personal Agenda</h1>
+          {% if user.is_authenticated %}
+              
+              <a class="btn btn-info" href="{% url 'uva_guide:cal' %}">Schedule</a>
+              <p class="card-text">Welcome, You are logged in as {{ user.username }}</p>
+              
+              <a class="btn btn-primary" href="{% url 'account_logout' %}">Logout</a>
+            {% else %}
+            <div class="row d-flex align-items-center">
+                <div class="col-4">
+                    <img class="p-1" style="height: 75%; width: 75%;" src="{% static 'uva_guide/images/g-logo.png' %}" alt="g-logo" class="img-fluid">
+                </div>
+                <div class="col-8">
+                    <a class="btn btn-outline-secondary" href="{% provider_login_url 'google' %}"><strong>Login With Google</strong></a>
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+      </div>
+  </div>
+{% endblock %}

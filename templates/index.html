@@ -1,0 +1,15 @@
+{% load socialaccount %}
+<html>
+<body>
+<h1>UVA guide!</h1>
+{% if user.is_authenticated %}
+  <p>Welcome, You are logged in as {{ user.username }}</p>
+  <!-- Check if user.firstTime == True.
+       IF true send to create Account page to get extra information needed
+       Else just send to home page -->
+  <a href="{% url 'account_logout' %}">Logout</a>
+{% else %}
+  <a href="{% provider_login_url 'google' %}">Login With Google</a>
+{% endif %}
+</body>
+</html>

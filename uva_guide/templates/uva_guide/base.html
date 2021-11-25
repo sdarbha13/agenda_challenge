@@ -1,0 +1,19 @@
+{% load bootstrap5 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
+{% endblock %}
+
+<body style="background-color: #e9cfb5;">
+
+</body>
+<div class="container text-center p-3 mt-3" style="font-family: 'Bodoni Moda', serif; background-color: #232D4B;">
+
+    {% block content %}{% endblock %}
+
+</div>

@@ -1,0 +1,10 @@
+Django
+gunicorn
+django-heroku
+whitenoise
+dj_database_url
+django-extensions
+django-allauth
+django-bootstrap-v5
+django-split-settings
+django-scheduler
